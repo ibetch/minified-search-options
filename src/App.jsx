@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SearchVariants from './components/SearchVariants';
 
 const rootEl = document.getElementById('root');
 
 const App = () => {
   return (
     <div>
-      <h1 style={{ 'textAlign': 'center'}}>Hello World :) </h1>
+      <SearchVariants />
     </div>
   );
 };

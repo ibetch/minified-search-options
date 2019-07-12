@@ -21,7 +21,7 @@ module.exports = {
     vendor: ['react', 'react-dom']
   },
   devtool: 'source-map',
-  resolve: {
+  resolve: { 
     extensions: ['.js', '.jsx']
   },
   module: {
