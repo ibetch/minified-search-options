@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SearchVariants from './components/SearchVariants';
+import './scss/global';
 
 const rootEl = document.getElementById('root');
 
