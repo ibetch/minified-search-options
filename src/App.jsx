@@ -23,5 +23,5 @@ renderApp();
 
 // Check for local changes and automatically refresh the browser
 if (module.hot) {
-  module.hot.accept('./components/App.jsx', () => renderApp());
+  module.hot.accept('./App.jsx', () => renderApp());
 }
