@@ -1,13 +1,16 @@
 import React from 'react';
-import SearchForm from './SearchForm';
+import PreviewSite from './PreviewSite';
 import ButtonClose from './ButtonClose';
 
 class Preview extends React.Component {
   render() {
     return (
       <div>
-        <h2>Preview</h2>
-        <SearchForm />
+        <header className="background-gray">
+          <h2>Preview</h2>
+        </header>
+        
+        <PreviewSite />
         <ButtonClose />
       </div>
       

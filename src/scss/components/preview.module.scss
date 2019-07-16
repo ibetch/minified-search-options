@@ -1,0 +1,51 @@
+@import '../normalize/variables';
+@import '../helpers/mixins';
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5em;
+}
+.headerLogo, .headerSearch
+.headerLogo {
+  font-weight: 700;
+  font-size: $h2-font-size;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+.headerNav {
+  width: 30%;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align: center;
+}
+
+.navItem {
+  width: 100%;
+  height: .25em;
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+.navItemContent {
+  width: 100%;height: 100%;
+}
+.headerSearch {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+@include md {
+  .headerNav {
+    width: 30%;
+  }
+  .nav {
+    margin-left: -.5em;
+    margin-right: -.5em;
+  }
+  .navItem {
+    width: 25%;
+    height: 1em;
+  }
+}
