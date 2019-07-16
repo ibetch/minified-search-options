@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import Label from './Label';
 import InputText from './InputText';
 import ButtonSubmit from './ButtonSubmit';
