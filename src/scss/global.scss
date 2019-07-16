@@ -1,3 +1,33 @@
+@import './normalize/import-now';
+
+@import './helpers/mixins';
+@import './helpers/display';
+@import './helpers/type';
+
+$gray: #5c6474;
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+  color: $gray;
+}
+.background-gray {
+  background-color: $gray;
+  color: white;
+}
+.border-gray {
+  border: 1px solid $gray;
+}
+.border-gray-thick {
+  border: 2px solid $gray;
+}
+.border-white {
+  border: 1px solid white;
+}
+.border-white-thick {
+  border: 2px solid white;
+}
+.svgIcon {
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
 }

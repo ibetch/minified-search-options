@@ -1,0 +1,13 @@
+@import '../normalize/variables';
+
+@mixin md {
+  @media #{$breakpoint-medium} { @content; }
+}
+
+@mixin md-and-up {
+  @media #{$breakpoint-not-small} { @content; }
+}
+
+@mixin lg-and-up {
+  @media #{$breakpoint-large} { @content; }
+}
