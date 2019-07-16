@@ -23,7 +23,6 @@ module.exports = {
     vendor: ['react', 'react-dom']
   },
   devtool: 'source-map',
-  
   module: {
     rules: [
       {
@@ -33,7 +32,7 @@ module.exports = {
       },
       {
         test: /\.module\.s(a|c)ss$/,
-        use: [
+        loader: [
           isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
@@ -55,7 +54,7 @@ module.exports = {
       {
         test: /\.s(a|c)ss$/,
         exclude: /\.module.(s(a|c)ss)$/,
-        use: [
+        loader: [
           isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           {
@@ -68,7 +67,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [
+        loader: [
           MiniCssExtractPlugin.loader, 'style-loader', 
           'css-loader', 'postcss-loader',
         ],
