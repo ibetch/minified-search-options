@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SearchVariants from './components/SearchVariants';
+import './scss/global';
 
 const rootEl = document.getElementById('root');
 
 const App = () => {
   return (
     <div>
-      <h1 style={{ 'textAlign': 'center'}}>Hello World :) </h1>
+      <SearchVariants />
     </div>
   );
 };
@@ -21,5 +23,5 @@ renderApp();
 
 // Check for local changes and automatically refresh the browser
 if (module.hot) {
-  module.hot.accept('./components/App.jsx', () => renderApp());
+  module.hot.accept('./App.jsx', () => renderApp());
 }

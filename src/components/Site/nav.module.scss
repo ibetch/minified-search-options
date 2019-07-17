@@ -1,0 +1,26 @@
+@import '../../scss/helpers/mixins';
+
+.navItem {
+  width: 100%;
+  height: .25em;
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+.navItemContent {
+  width: 100%;height: 100%;
+}
+.headerSearch {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+@include md {
+  .nav {
+    margin-left: -.5em;
+    margin-right: -.5em;
+  }
+  .navItem {
+    width: 25%;
+    height: 1em;
+  }
+}

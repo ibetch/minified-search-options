@@ -1,0 +1,25 @@
+.db {
+  display: block;
+}
+.dn {
+  display: none;
+}
+.dib {
+  display: inline-block;
+}
+.vam {
+  vertical-align: middle;
+}
+@include md {
+  .dib-m {
+    display: inline-block;
+  }
+}
+
+.hidden {position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}

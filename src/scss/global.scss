@@ -1,0 +1,48 @@
+@import './normalize/import-now';
+
+@import './helpers/mixins';
+@import './helpers/display';
+@import './helpers/image';
+@import './helpers/spacing';
+@import './helpers/type';
+
+$gray: #677081;
+$action: #19a974;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: $gray;
+}
+.background-gray {
+  background-color: $gray;
+  .text-fine-print {
+    background-color: white;
+  }
+}
+.background-action {
+  background-color: $action;
+}
+.border-gray {
+  border: 1px solid $gray;
+}
+.border-gray-thick {
+  border: 2px solid $gray;
+}
+.border-action {
+  border: 1px solid $action;
+}
+.border-action-thick {
+  border: 2px solid $action;
+}
+.border-white {
+  border: 1px solid white;
+}
+.border-white-thick {
+  border: 2px solid white;
+}
+.svgIcon {
+  fill: currentColor;
+  &.svgIconButton {
+    color: white;
+  }
+}

@@ -2,15 +2,17 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const isDevelopment = process.env.NODE_ENV !== 'production';
 // HtmlWebpackPlugin to inject bundles into index
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
   filename: 'index.html',
   inject: 'body',
 });
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: isDevelopment ? 'development' : 'production',
   target: 'web',
   devServer: {
     port: 3000,
@@ -21,9 +23,6 @@ module.exports = {
     vendor: ['react', 'react-dom']
   },
   devtool: 'source-map',
-  resolve: {
-    extensions: ['.js', '.jsx']
-  },
   module: {
     rules: [
       {
@@ -32,9 +31,44 @@ module.exports = {
         use: ['babel-loader'], // transpile es6 code
       },
       {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
+        test: /\.module\.s(a|c)ss$/,
+        loader: [
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+              camelCase: true,
+              sourceMap: isDevelopment
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: isDevelopment
+            }
+          }
+        ]
+      },
+      {
+        test: /\.s(a|c)ss$/,
+        exclude: /\.module.(s(a|c)ss)$/,
+        loader: [
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: isDevelopment
+            }
+          }
+        ]
+      },
+      {
+        test: /\.css$/i,
+        loader: [
+          MiniCssExtractPlugin.loader, 'style-loader', 
           'css-loader', 'postcss-loader',
         ],
       },
@@ -42,11 +76,18 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
-      chunkFilename: 'styles.css'
+      filename: isDevelopment ? '[name].css' : '[name].[hash].css',
+      chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
     }),
     HtmlWebpackPluginConfig,
     new webpack.NoEmitOnErrorsPlugin(),
+    new CleanWebpackPlugin()
   ],
-  mode: 'development',
+  output: {
+    filename: isDevelopment ? '[name].js' : '[name].[hash].js',
+    path: path.resolve(process.cwd(), 'dist')
+  },
+  resolve: { 
+    extensions: ['.js', '.jsx', '.scss']
+  },
 }
