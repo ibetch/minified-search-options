@@ -1,0 +1,13 @@
+.wrapper {
+  position: relative;
+}
+.image {
+  height: 24vh;
+}
+.heading {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

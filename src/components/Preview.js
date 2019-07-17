@@ -1,5 +1,5 @@
 import React from 'react';
-import PreviewSite from './PreviewSite';
+import Site from './Site';
 import ButtonClose from './ButtonClose';
 
 class Preview extends React.Component {
@@ -10,7 +10,7 @@ class Preview extends React.Component {
           <h2>Preview</h2>
         </header>
         
-        <PreviewSite />
+        <Site />
         <ButtonClose />
       </div>
       

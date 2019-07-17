@@ -2,9 +2,11 @@
 
 @import './helpers/mixins';
 @import './helpers/display';
+@import './helpers/image';
+@import './helpers/spacing';
 @import './helpers/type';
 
-$gray: #5c6474;
+$gray: #677081;
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -12,7 +14,9 @@ body {
 }
 .background-gray {
   background-color: $gray;
-  color: white;
+  .text-fine-print {
+    background-color: white;
+  }
 }
 .border-gray {
   border: 1px solid $gray;
@@ -28,6 +32,4 @@ body {
 }
 .svgIcon {
   fill: currentColor;
-  display: inline-block;
-  vertical-align: middle;
 }
